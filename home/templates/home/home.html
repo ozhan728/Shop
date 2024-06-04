@@ -10,6 +10,16 @@
 {% block content %}
 
 
-    <h3> hello user </h3>
+    {% for product in products %}
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ product.image.url }}" >
+          <div class="card-body">
+            <a href="{{ product.get_absolute_url }}" class="card-title">{{ product.name }}</a>
+            <p class="card-text">{{ product.description |truncatewords:10 }}</p>
+          </div>
+        </div>
+
+{% endfor %}
 
 {% endblock %}
