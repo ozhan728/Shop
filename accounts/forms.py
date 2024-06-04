@@ -33,7 +33,7 @@ class UserChangeForm(forms.ModelForm):
     disabled password hash display field.
     """
 
-    password = ReadOnlyPasswordHashField(help_text='You can not change password using <a href=\"../password/\" > this form </a>')
+    password = ReadOnlyPasswordHashField(help_text='You can change password using <a href=\"../password/\" > this form </a>')
 
     class Meta:
         model = User
