@@ -18,7 +18,7 @@ class HomeView(View):
         # this is for celery test only
         # my_task.delay()
         products = Product.objects.filter(available=True)
-        categories = Category.objects.all()
+        categories = Category.objects.filter(is_sub=False)
         if category_slug:
             category = Category.objects.get(slug=category_slug)
             products = products.filter(category=category)
