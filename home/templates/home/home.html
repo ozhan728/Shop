@@ -9,11 +9,18 @@
 
 {% block content %}
 
+    {% for category in categories %}
+
+        <a class="btn btn-secondary" style=" display:inline-block" href="{{ category.get_absolute_url }}"> {{ category.name }} </a>
+<!--        <a class="btn btn-secondary" style=" display:inline-block" href="{% url 'home:category_filter' category.slug %}"> {{ category.name }} </a>-->
+
+    {% endfor %}
+    </br></br>
 
     {% for product in products %}
 
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="{{ product.image.url }}" >
+        <div class="card" style="width: 18rem; display:inline-block">
+          <img class="img-fluid img-thumbnail" src="{{ product.image.url }}" style="height:250px; width:300px;" >
           <div class="card-body">
             <a href="{{ product.get_absolute_url }}" class="card-title">{{ product.name }}</a>
             <p class="card-text">{{ product.description |truncatewords:10 }}</p>

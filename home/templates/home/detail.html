@@ -4,7 +4,7 @@
     <h2> {{ product.created }} </h2>
     <small> {{ product.created }} </small><br/>
     <p> {{ product.price }} Toman </p>
-    <img src="{{ product.image.url }}" alt="">
+    <img class="img-fluid img-thumbnail" src="{{ product.image.url }}" style="height:350px; width:400px;" >
     <p> {{ product.description }} </p>
 
 {% endblock %}
