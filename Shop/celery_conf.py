@@ -14,6 +14,7 @@ celery_app.config_from_object("Shop.celery_conf", namespace="CELERY")
 celery_app.autodiscover_tasks()
 
 # """
+#     redis-server
 #     commands :  celery -A Shop worker -l INFO
 #     beat commands : celery -A Shop beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
 #
